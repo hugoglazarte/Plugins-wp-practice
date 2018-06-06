@@ -53,7 +53,7 @@ if(!function_exists("cc_post_contenido_relacionado"))
 					//cantidad de post por pagina
 					'posts_per_page'=>3,
 					//excluimos el post donde estamos parados
-					'post_not_in'=>array(get_the_ID()),
+					'post__not_in'=>array(get_the_ID()),
 					//ordenamos
 					'orderby'=>'rand'
 				)
