@@ -27,6 +27,8 @@ if(! function_exists("cc_filtros_edit"))
   }
 }
 
+
+// Pasando todo el contenido del post a Mayuscula
 if(! function_exists("cc_filtros_edit_cuerpo"))
 {
   function cc_filtros_edit_cuerpo($text)
