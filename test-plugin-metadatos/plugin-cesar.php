@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Ejemplo de Plugin Test Meta_boxes - HUGO
  * Plugin URI: http://www.hugolazarte.com/plugins
- * Description: Este plugin es un test.
+ * Description: Este plugin es un test Blaaaaaaaa.
  * Version: 1.0.0
  * Author: Hugo Lazarte
  * Author URI: http://www.hugolazarte.com/
@@ -31,7 +31,7 @@ if(!function_exists("cc_carga_data"))
   function cc_carga_data()
   {
     // recuperamos el id del registro
-    $values = get_post_custom($post->ID);
+    $value = get_post_custom($post->ID);
 
     // creamos un var, obtenemos desde el array Value el campo "cc_campo" y le damos el primer indice
     $campo = esc_attr($value["cc_campo"][0]);
@@ -99,7 +99,7 @@ if(!function_exists("cc_guardar_campo"))
     $dato = sanitize_text_field($_POST["cc_campo"]);
 
     // guardamos en la db, pasamos (id, nombre campo, dato)
-    update_post_meta( $post_id, 'cc_campo', $dato );
+    update_post_meta( $post_id, "cc_campo", $dato );
 
   }
 }
@@ -120,6 +120,7 @@ if(!function_exists("cc_getContent"))
       // si estamos en el detalle del post, agregamos el contenido del nuevo
       //  campo a $content y lo devolvemos (imprimimos en este caso)
       $content.="<hr />Campo Nuevo = ".cc_carga_data();
+      //$content = "<hr />Campo Nuevo = ".cc_carga_data();
       return $content;
     }
   }
